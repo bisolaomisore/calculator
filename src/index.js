@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class HelloWorld extends React.Component {
+class Calculator extends React.Component {
   render() {
-    return <div>Hello, world!</div>;
+    return <div id="calculator"></div>;
   }
 }
 
 // ==========================================================================
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+ReactDOM.render(<Calculator />, document.getElementById('root'));

@@ -58,3 +58,7 @@ table {
 #calculator {
   background-color: red;
 }
+
+.circle {
+  border-radius: 50%;
+}

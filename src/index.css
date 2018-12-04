@@ -72,3 +72,9 @@ table {
   background-color: #f8d7d2;
   color: #fff;
 }
+
+.btn {
+  height: 3.5rem;
+  width: 3.5rem;
+  border: none;
+}

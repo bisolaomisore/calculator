@@ -62,3 +62,13 @@ table {
 .circle {
   border-radius: 50%;
 }
+
+.white-red {
+  background-color: #fff;
+  color: #ff5035;
+}
+
+.pink-white {
+  background-color: #f8d7d2;
+  color: #fff;
+}

@@ -4,7 +4,7 @@ import './index.css';
 
 function DisplayBox(props) {
   return (
-    <div>Display</div>
+    <div id="display">Display</div>
   );
 }
 

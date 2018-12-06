@@ -66,9 +66,20 @@ table {
 }
 
 #display {
+	align-items: center;
 	background-color: hsl(8, 60%, 45%);
 	border-radius: 150px;
+	display: flex;
 	height: 8%;
+	justify-content: center;
+}
+
+#display-text {
+	color: white;
+	font-size: 2.5rem;
+	height: 70%;
+	text-align: right;
+	width: 75%;
 }
 
 .circle {

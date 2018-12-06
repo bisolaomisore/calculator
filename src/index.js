@@ -4,7 +4,9 @@ import './index.css';
 
 function DisplayBox(props) {
   return (
-    <div id="display">Display</div>
+    <div id="display">
+      <p id="display-text">100</p>
+    </div>
   );
 }
 

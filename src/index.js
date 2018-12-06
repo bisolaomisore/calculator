@@ -4,7 +4,7 @@ import './index.css';
 
 function DisplayBox(props) {
   return (
-    <div id="display">
+    <div id="display" className="pill">
       <p id="display-text">100</p>
     </div>
   );
@@ -40,7 +40,7 @@ class Calculator extends React.Component {
           <button className="btn circle pink-white">-</button>
         </div>
         <div id="row5" className="calc-row">
-          <button className="btn circle white-red">0</button>
+          <button id="zero" className="btn pill white-red">0</button>
           <button className="btn circle white-red">.</button>
           <button className="btn circle pink-white">=</button>
         </div>

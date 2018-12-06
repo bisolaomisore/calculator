@@ -72,7 +72,6 @@ body {
 #display {
 	align-items: center;
 	background-color: hsl(8, 60%, 45%);
-	border-radius: 150px;
 	display: flex;
 	height: 8%;
 	justify-content: center;
@@ -84,6 +83,10 @@ body {
 	height: 70%;
 	text-align: right;
 	width: 75%;
+}
+
+#zero {
+	width: 7.5rem;
 }
 
 .circle {
@@ -112,4 +115,8 @@ body {
 .calc-row {
   display: flex;
   justify-content: space-between;
+}
+
+.pill {
+	border-radius: 150px;
 }

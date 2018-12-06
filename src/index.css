@@ -48,6 +48,10 @@ table {
 }
 
 /* ------------------------------------------------------------------------ */
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
 #root {
   align-items: center;
   background-color: #ff5035;
@@ -99,6 +103,7 @@ table {
 .btn {
   border: none;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	font-family: inherit;
 	font-size: 1.6rem;
   height: 3.5rem;
   width: 3.5rem;

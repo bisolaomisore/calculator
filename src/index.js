@@ -5,7 +5,7 @@ import './index.css';
 function DisplayBox(props) {
   return (
     <div id="display" className="pill">
-      <p id="display-text">100</p>
+      <p id="display-text">{props.value}</p>
     </div>
   );
 }
@@ -13,13 +13,16 @@ function DisplayBox(props) {
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      curVal: 0,
+      preVal: 0,
+    }
   }
 
   render() {
     return (
       <div id="calculator" >
-        <DisplayBox / >
+        <DisplayBox value={this.state.curVal}/ >
         <div id="row1" className="calc-row">
           <button className="btn circle pink-white">AC</button>
           <button className="btn circle pink-white">+/-</button>

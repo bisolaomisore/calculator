@@ -22,7 +22,14 @@ class Calculator extends React.Component {
   clickNumber(number) {
     this.setState({
       curVal: this.state.curVal + number
-    })
+    });
+  }
+
+  clear() {
+    this.setState({
+      curVal: '',
+      preVal: '',
+    });
   }
 
   render() {
@@ -30,7 +37,7 @@ class Calculator extends React.Component {
       <div id="calculator" >
         <DisplayBox value={this.state.curVal}/ >
         <div id="row1" className="calc-row">
-          <button className="btn circle pink-white">AC</button>
+          <button className="btn circle pink-white" onClick={() => this.clear()}>AC</button>
           <button className="btn circle pink-white">+/-</button>
           <button className="btn circle pink-white">%</button>
           <button className="btn circle pink-white">/</button>

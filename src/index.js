@@ -35,15 +35,30 @@ class Calculator extends React.Component {
   }
 
   plus() {
-    if (this.state.curVal && this.state.curVal !== '+') {
+    if (!this.state.curVal) {
+      this.setState({curVal: '+'});
+    } else if (this.state.curVal && this.state.curVal !== '+') {
       this.setState({
         preVal: this.state.curVal,
         curVal: '',
-        operator: '+',
+        // put spaces around operator to avoid postfix error during evaluation.
+        operator: ' + ',
       });
     }
+  }
 
-    this.setState({curVal: '+'});
+  equals() {
+    let cur = this.state.curVal;
+    let pre = this.state.preVal;
+    let op = this.state.operator;
+
+    if (cur && pre && op) {
+      this.setState({
+        curVal: eval(pre + op + cur).toString(),
+        preVal: '',
+        operator: ''
+      })
+    }
   }
 
   render() {
@@ -77,7 +92,7 @@ class Calculator extends React.Component {
         <div id="row5" className="calc-row">
           <button id="zero" className="btn pill white-red" onClick={() => this.clickNumber('0')}>0</button>
           <button className="btn circle white-red" onClick={() => this.clickNumber('.')}>.</button>
-          <button className="btn circle pink-white">=</button>
+          <button className="btn circle pink-white"onClick={() => this.equals()}>=</button>
         </div>
       </div>
     );

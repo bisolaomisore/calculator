@@ -94,6 +94,7 @@ class Calculator extends React.Component {
           <button className="btn circle white-red" onClick={() => this.clickNumber('.')}>.</button>
           <button className="btn circle pink-white"onClick={() => this.equals()}>=</button>
         </div>
+        <button onClick={() => console.log(this.state)}>state</button>
       </div>
     );
   }

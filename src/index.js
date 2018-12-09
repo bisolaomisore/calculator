@@ -70,6 +70,16 @@ class Calculator extends React.Component {
     }
   }
 
+  divide() {
+    if (this.state.curVal) {
+      this.setState({
+        preVal: this.state.curVal,
+        curVal: '',
+        operator: '/',
+      });
+    }
+  }
+
   equals() {
     let cur = this.state.curVal;
     let pre = this.state.preVal;
@@ -92,7 +102,7 @@ class Calculator extends React.Component {
           <button className="btn circle pink-white" onClick={() => this.clear()}>AC</button>
           <button className="btn circle pink-white">+/-</button>
           <button className="btn circle pink-white">%</button>
-          <button className="btn circle pink-white">/</button>
+          <button className="btn circle pink-white" onClick={() => this.divide()}>/</button>
         </div>
         <div id="row2" className="calc-row">
           <button className="btn circle white-red" onClick={() => this.clickNumber('7')}>7</button>

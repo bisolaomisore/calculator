@@ -60,6 +60,16 @@ class Calculator extends React.Component {
     }
   }
 
+  multiply() {
+    if (this.state.curVal) {
+      this.setState({
+        preVal: this.state.curVal,
+        curVal: '',
+        operator: '*',
+      });
+    }
+  }
+
   equals() {
     let cur = this.state.curVal;
     let pre = this.state.preVal;
@@ -88,7 +98,7 @@ class Calculator extends React.Component {
           <button className="btn circle white-red" onClick={() => this.clickNumber('7')}>7</button>
           <button className="btn circle white-red" onClick={() => this.clickNumber('8')}>8</button>
           <button className="btn circle white-red" onClick={() => this.clickNumber('9')}>9</button>
-          <button className="btn circle pink-white">x</button>
+          <button className="btn circle pink-white" onClick={() => this.multiply()}>x</button>
         </div>
         <div id="row3" className="calc-row">
           <button className="btn circle white-red" onClick={() => this.clickNumber('4')}>4</button>

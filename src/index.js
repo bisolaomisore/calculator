@@ -94,13 +94,22 @@ class Calculator extends React.Component {
     }
   }
 
+  plusMinus() {
+    let cur = this.state.curVal;
+    if (cur) {
+      this.setState({
+        curVal: cur[0] === '-' ? cur.slice(1) : '-' + cur
+      })
+    }
+  }
+
   render() {
     return (
       <div id="calculator" >
         <DisplayBox value={this.state.curVal}/ >
         <div id="row1" className="calc-row">
           <button className="btn circle pink-white" onClick={() => this.clear()}>AC</button>
-          <button className="btn circle pink-white">+/-</button>
+          <button className="btn circle pink-white" onClick={() => this.plusMinus()}>+/-</button>
           <button className="btn circle pink-white">%</button>
           <button className="btn circle pink-white" onClick={() => this.divide()}>/</button>
         </div>

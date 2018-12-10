@@ -11,14 +11,17 @@ function DisplayBox(props) {
 }
 
 class Calculator extends React.Component {
+
+  defaultState  = {
+    curVal: '',
+    preVal: '',
+    disVal: '',
+    operator: ''
+  }
+
   constructor(props) {
     super(props);
-    this.state = {
-      curVal: '',
-      preVal: '',
-      disVal: '',
-      operator: ''
-    }
+    this.state = this.defaultState;
   }
 
   clickNumber(number) {
@@ -33,12 +36,7 @@ class Calculator extends React.Component {
   }
 
   clear() {
-    this.setState({
-      curVal: '',
-      preVal: '',
-      disVal: '',
-      operator: ''
-    });
+    this.setState(this.defaultState);
   }
 
   operator(op) {

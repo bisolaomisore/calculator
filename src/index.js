@@ -95,6 +95,7 @@ class Calculator extends React.Component {
     if (cur && pre && op) {
       cur = eval(pre + op + cur);
       cur = Number.isInteger(cur) ? cur : cur.toFixed(2);
+      cur = cur.toString().length > 9 ? cur.toExponential(2) : cur;
       cur = cur.toString();
 
       this.setState({

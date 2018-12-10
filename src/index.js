@@ -22,10 +22,14 @@ class Calculator extends React.Component {
   }
 
   clickNumber(number) {
-    this.setState({
-      curVal: this.state.curVal + number,
-      disVal: this.state.curVal + number
-    });
+    let cur = this.state.curVal;
+
+    if (cur.length < 9) {
+      this.setState({
+        curVal: cur + number,
+        disVal: cur + number
+      });
+    }
   }
 
   clear() {

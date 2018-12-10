@@ -35,9 +35,7 @@ class Calculator extends React.Component {
   }
 
   plus() {
-    if (!this.state.curVal) {
-      this.setState({curVal: '+'});
-    } else if (this.state.curVal && this.state.curVal !== '+') {
+    if (this.state.curVal) {
       this.setState({
         preVal: this.state.curVal,
         curVal: '',
@@ -48,9 +46,7 @@ class Calculator extends React.Component {
   }
 
   minus() {
-    if (!this.state.curVal) {
-      this.setState({curVal: '-'});
-    } else if (this.state.curVal && this.state.curVal !== '-') {
+    if (this.state.curVal) {
       this.setState({
         preVal: this.state.curVal,
         curVal: '',

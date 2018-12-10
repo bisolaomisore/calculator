@@ -16,13 +16,15 @@ class Calculator extends React.Component {
     this.state = {
       curVal: '',
       preVal: '',
+      disVal: '',
       operator: ''
     }
   }
 
   clickNumber(number) {
     this.setState({
-      curVal: this.state.curVal + number
+      curVal: this.state.curVal + number,
+      disVal: this.state.curVal + number
     });
   }
 
@@ -30,6 +32,7 @@ class Calculator extends React.Component {
     this.setState({
       curVal: '',
       preVal: '',
+      disVal: '',
       operator: ''
     });
   }
@@ -39,6 +42,7 @@ class Calculator extends React.Component {
       this.setState({
         preVal: this.state.curVal,
         curVal: '',
+        disVal: '',
         // put spaces around operator to avoid postfix error during evaluation.
         operator: ' + ',
       });
@@ -50,6 +54,7 @@ class Calculator extends React.Component {
       this.setState({
         preVal: this.state.curVal,
         curVal: '',
+        disVal: '',
         // put spaces around operator to avoid postfix error during evaluation.
         operator: ' - ',
       });
@@ -61,6 +66,7 @@ class Calculator extends React.Component {
       this.setState({
         preVal: this.state.curVal,
         curVal: '',
+        disVal: '',
         operator: '*',
       });
     }
@@ -71,6 +77,7 @@ class Calculator extends React.Component {
       this.setState({
         preVal: this.state.curVal,
         curVal: '',
+        disVal: '',
         operator: '/',
       });
     }
@@ -84,6 +91,7 @@ class Calculator extends React.Component {
     if (cur && pre && op) {
       this.setState({
         curVal: eval(pre + op + cur).toFixed(4).toString(),
+        disVal: eval(pre + op + cur).toFixed(4).toString(),
         preVal: '',
         operator: ''
       })
@@ -94,19 +102,31 @@ class Calculator extends React.Component {
     let cur = this.state.curVal;
     if (cur) {
       this.setState({
-        curVal: cur[0] === '-' ? cur.slice(1) : '-' + cur
+        curVal: cur[0] === '-' ? cur.slice(1) : '-' + cur,
+        disVal: cur[0] === '-' ? cur.slice(1) : '-' + cur
       })
+    }
+  }
+
+  percent() {
+    let cur = this.state.curVal;
+    let pre = this.state.preVal;
+    if(pre && cur && !cur.includes('%')) {
+      this.setState({
+        curVal: Number(cur) * Number(pre) / 100,
+        disVal: cur + '%'
+      });
     }
   }
 
   render() {
     return (
       <div id="calculator" >
-        <DisplayBox value={this.state.curVal}/ >
+        <DisplayBox value={this.state.disVal}/ >
         <div id="row1" className="calc-row">
           <button className="btn circle pink-white" onClick={() => this.clear()}>AC</button>
           <button className="btn circle pink-white" onClick={() => this.plusMinus()}>+/-</button>
-          <button className="btn circle pink-white">%</button>
+          <button className="btn circle pink-white" onClick={() => this.percent()}>%</button>
           <button className="btn circle pink-white" onClick={() => this.divide()}>/</button>
         </div>
         <div id="row2" className="calc-row">

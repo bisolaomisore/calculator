@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+let btnNum = 'btn circle white-red';
+let pillNum = 'btn pill white-red';
+let btnOp = 'btn circle pink-white';
+
 function DisplayBox(props) {
   return (
     <div id="display" className="pill">
@@ -101,33 +105,33 @@ class Calculator extends React.Component {
       <div id="calculator" >
         <DisplayBox value={this.state.disVal}/ >
         <div id="row1" className="calc-row">
-          <button className="btn circle pink-white" onClick={() => this.clear()}>AC</button>
-          <button className="btn circle pink-white" onClick={() => this.plusMinus()}>+/-</button>
-          <button className="btn circle pink-white" onClick={() => this.percent()}>%</button>
-          <button className="btn circle pink-white" onClick={() => this.operator('/')}>/</button>
+          <button className={btnOp}  onClick={() => this.clear()}>AC</button>
+          <button className={btnOp}  onClick={() => this.plusMinus()}>+/-</button>
+          <button className={btnOp}  onClick={() => this.percent()}>%</button>
+          <button className={btnOp}  onClick={() => this.operator('/')}>/</button>
         </div>
         <div id="row2" className="calc-row">
-          <button className="btn circle white-red" onClick={() => this.clickNumber('7')}>7</button>
-          <button className="btn circle white-red" onClick={() => this.clickNumber('8')}>8</button>
-          <button className="btn circle white-red" onClick={() => this.clickNumber('9')}>9</button>
-          <button className="btn circle pink-white" onClick={() => this.operator('*')}>x</button>
+          <button className={btnNum} onClick={() => this.clickNumber('7')}>7</button>
+          <button className={btnNum} onClick={() => this.clickNumber('8')}>8</button>
+          <button className={btnNum} onClick={() => this.clickNumber('9')}>9</button>
+          <button className={btnOp}  onClick={() => this.operator('*')}>x</button>
         </div>
         <div id="row3" className="calc-row">
-          <button className="btn circle white-red" onClick={() => this.clickNumber('4')}>4</button>
-          <button className="btn circle white-red" onClick={() => this.clickNumber('5')}>5</button>
-          <button className="btn circle white-red" onClick={() => this.clickNumber('6')}>6</button>
-          <button className="btn circle pink-white" onClick={() => this.operator('+')}>+</button>
+          <button className={btnNum} onClick={() => this.clickNumber('4')}>4</button>
+          <button className={btnNum} onClick={() => this.clickNumber('5')}>5</button>
+          <button className={btnNum} onClick={() => this.clickNumber('6')}>6</button>
+          <button className={btnOp}  onClick={() => this.operator('+')}>+</button>
         </div>
         <div id="row4" className="calc-row">
-          <button className="btn circle white-red" onClick={() => this.clickNumber('1')}>1</button>
-          <button className="btn circle white-red" onClick={() => this.clickNumber('2')}>2</button>
-          <button className="btn circle white-red" onClick={() => this.clickNumber('3')}>3</button>
-          <button className="btn circle pink-white" onClick={() => this.operator('-')}>-</button>
+          <button className={btnNum} onClick={() => this.clickNumber('1')}>1</button>
+          <button className={btnNum} onClick={() => this.clickNumber('2')}>2</button>
+          <button className={btnNum} onClick={() => this.clickNumber('3')}>3</button>
+          <button className={btnOp}  onClick={() => this.operator('-')}>-</button>
         </div>
         <div id="row5" className="calc-row">
-          <button id="zero" className="btn pill white-red" onClick={() => this.clickNumber('0')}>0</button>
-          <button className="btn circle white-red" onClick={() => this.clickNumber('.')}>.</button>
-          <button className="btn circle pink-white"onClick={() => this.equals()}>=</button>
+          <button id="zero" className={pillNum} onClick={() => this.clickNumber('0')}>0</button>
+          <button className={btnNum} onClick={() => this.clickNumber('.')}>.</button>
+          <button className={btnOp} onClick={() => this.equals()}>=</button>
         </div>
       </div>
     );

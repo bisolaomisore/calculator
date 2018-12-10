@@ -89,9 +89,13 @@ class Calculator extends React.Component {
     let op = this.state.operator;
 
     if (cur && pre && op) {
+      cur = eval(pre + op + cur);
+      cur = Number.isInteger(cur) ? cur : cur.toFixed(2);
+      cur = cur.toString();
+
       this.setState({
-        curVal: eval(pre + op + cur).toFixed(2).toString(),
-        disVal: eval(pre + op + cur).toFixed(2).toString(),
+        curVal: cur,
+        disVal: cur,
         preVal: '',
         operator: ''
       })

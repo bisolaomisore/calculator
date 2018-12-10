@@ -26,11 +26,12 @@ class Calculator extends React.Component {
 
   clickNumber(number) {
     let cur = this.state.curVal;
+    let val = cur + number;
 
     if (cur.length < 9) {
       this.setState({
-        curVal: cur + number,
-        disVal: cur + number
+        curVal: val,
+        disVal: val
       });
     }
   }
@@ -74,10 +75,12 @@ class Calculator extends React.Component {
 
   plusMinus() {
     let cur = this.state.curVal;
+    let val = cur[0] === '-' ? cur.slice(1) : '-' + cur;
+
     if (cur) {
       this.setState({
-        curVal: cur[0] === '-' ? cur.slice(1) : '-' + cur,
-        disVal: cur[0] === '-' ? cur.slice(1) : '-' + cur
+        curVal: val,
+        disVal: val
       })
     }
   }
